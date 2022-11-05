@@ -4,7 +4,7 @@ class LoginUser{
    private $password;
    public $error;
    public $success;
-   private $storage = "data.json";
+   private $storage = "../data.json";
    private $stored_users;
  
    public function __construct($username, $password){
@@ -23,7 +23,7 @@ class LoginUser{
                $_SESSION['email'] = $user['email'];
                $_SESSION['phone'] = $user['phone'];
                $_SESSION['gender'] = $user['gender'];
-               header("location: dashboard.php");
+               header("location: ../views/dashboard.php");
                exit();
             }
          }

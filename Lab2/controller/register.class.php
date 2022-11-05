@@ -1,8 +1,7 @@
 <?php
 
 class RegisterUser{
-   private $username;
-   private $address;
+   private $username;  
    private $email;
    private $phone;
    private $gender;
@@ -14,9 +13,8 @@ class RegisterUser{
    private $stored_users; // array
    private $new_user; // array
 
-   public function __construct($username,$address, $email, $phone, $gender, $password){
+   public function __construct($username, $email, $phone, $gender, $password){
         $this->username = $username;
-        $this->address = $address;
         $this->email = $email;
         $this->phone = $phone;
         $this->gender = $gender;
@@ -25,7 +23,6 @@ class RegisterUser{
         $this->stored_users = json_decode(file_get_contents($this->storage), true);
         $this->new_user = [
             "username" => $this->username,
-            "address" => $this->address,
             "email" => $this->email,
             "phone" => $this->phone,
             "gender" => $this->gender,

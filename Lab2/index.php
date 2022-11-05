@@ -1,13 +1,13 @@
-<?php require('register.class.php') ?>
+<?php require('./controller/register.class.php') ?>
 
 <?php
 
     if(isset($_POST['submit'])){
-        $user = new RegisterUser($_POST['username'], $_POST['address'], $_POST['email'], $_POST['phone'], $_POST['gender'], $_POST['password']);
+        $user = new RegisterUser($_POST['username'], $_POST['email'], $_POST['phone'], $_POST['gender'], $_POST['password']);
     }
 
     if(isset($_GET['login'])){
-        header("location: login.php");
+        header("location: views/login.php");
     }
 
 ?>
@@ -31,10 +31,7 @@
             <td>Employee Name</td>
             <td><input type="text" name="username" placeholder="Enter your name"></td>
         </tr>
-        <tr>
-            <td>Address</td>
-            <td><input type="text" name="address" placeholder="Enter your address"></td>
-        </tr>
+        
         <tr>
             <td>Employee Email</td>
             <td><input type="email" name="email" placeholder="Enter your email"></td>
